@@ -7,7 +7,7 @@ read increment
 
 for ((i=1; i<=points; i++))
 do
- echo "year $i:" +  $startingSalary + $i*$increment
+	echo "year $i:" $(( $startingSalary + ($i * $increment)))
 done
 
 	
