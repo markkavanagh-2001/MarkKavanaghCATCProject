@@ -1,5 +1,6 @@
 #! /bin/bash
 #This is Question 2.2:
+set -o history
 exec > MarkKavanagh.txt 2>&1
 
 date
@@ -10,6 +11,6 @@ uptime
 whoami
 who
 w
-top
+top -n 1
 history
 
