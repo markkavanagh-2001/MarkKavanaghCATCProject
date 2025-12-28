@@ -1,15 +1,15 @@
 #! /bin/bash
 #This is Question 2.2:
-logfile="MarkKavanagh.txt"
+exec > MarkKavanagh.txt 2>&1
 
-date > $logfile
-hostname > $logfile
-arch > $logfile
-uname -a > $logfile
-uptime > $logfile
-whoami > $logfile
-who > $logfile
-w > $logfile
-top > $logfile
-history > $logfile
+date
+hostname
+arch
+uname -a
+uptime
+whoami
+who
+w
+top
+history
 
