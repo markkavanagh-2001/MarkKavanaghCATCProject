@@ -11,7 +11,9 @@ if [[ "$manager" = "Y" || "$manager" = "y" ]]; then
 	#There will now be double the number of points to plot. 
 	for ((i=0; i<=($points * 2); i++)) #Calculate the salary for each point
 	do
-		echo "year: $(echo "scale=1; $i/2" | bc )"  $(( $startingSalary + ($i * $increment)))
+		yearDecimal=$(echo "scale=1; $i/2" | bc)
+		salaryIncrement=$((startingSalary + ($i * $increment)))
+		echo "year: $yearDecimal ------ Salary: " $salaryIncrement  
 	done
 elif [[ "$manager" = "N" || "$manager" = "n" ]]; then
 	echo "IncsPerYear = 1"
