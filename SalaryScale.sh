@@ -1,17 +1,14 @@
-echo "Please enter your starting salary:"
-read startingSalary
-echo "Please enter how many years you wish to show your salary scale for:"
-read points
-echo "Please enter the salary increment that you expect:"
-read increment
+read -p  "Please enter your starting salary:" startingSalary
+read -p  "Please enter how many years you wish to show your salary scale for:" points
+read -p  "Please enter the salary increment that you expect:" increment
 read -p "Are you a manager (Y/N):" manager
 
-
 if [[ "$manager" = "Y" || "$manager" = "y" ]]; then
-	echo "IncsPerYear = 2"
-	for ((i=0; i<=($points * 2); i++))
+	echo "year: 0 " $startingSalary
+	for ((i=1; i<=($points * 2); i++))
 	do
-		echo "year $(($i /2))" $(( $startingSalary + ($i * $increment)))
+		year=$(printf "%.2f" $($i/2))
+		echo "year: $year"  $(( $startingSalary + ($i * $increment)))
 	done
 elif [[ "$manager" = "N" || "$manager" = "n" ]]; then
 	echo "IncsPerYear = 1"
