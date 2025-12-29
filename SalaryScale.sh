@@ -12,22 +12,24 @@ if [[ "$manager" = "Y" || "$manager" = "y" ]]; then
 	for ((i=0; i<=($points * 2); i++)) #Calculate the salary for each point
 	do
 		yearDecimal=$(echo "scale=1; $i/2" | bc)
-		salaryIncrement=$((startingSalary + ($i * $increment)))
+		salaryIncrement=$(($startingSalary + ($i * $increment)))
 		echo "year: $yearDecimal ------ Salary: " $salaryIncrement  
 	done
 elif [[ "$manager" = "N" || "$manager" = "n" ]]; then
-	echo "IncsPerYear = 1"
+	for ((i=0; i<=points; i++))
+	do
+		salaryIncrement=$(($startingSalary + ($i * $increment)))
+		echo "year: $i ------ Salary: " $salaryIncrement
+	done
 else
 	echo "Please enter 'Y', 'y', 'N', or 'n'"
 fi
 
 
-echo "$IncsPerYear"
-
-for ((i=0; i<=points; i++))
-do
-	echo "year $i:" $(( $startingSalary + ($i * $increment)))
-done
+#for ((i=0; i<=points; i++))
+#do
+#	echo "year $i:" $(( $startingSalary + ($i * $increment)))
+#done
 
 
 
