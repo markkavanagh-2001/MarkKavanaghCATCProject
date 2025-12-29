@@ -9,6 +9,8 @@ read -p "Are you a manager (Y/N):" manager
 
 if [[ "$manager" = "Y" || "$manager" = "y" ]]; then
 	echo "IncsPerYear = 2"
+elif [[ "$manager" = "N" || "$manager" = "n" ]]; then
+	echo "IncsPerYear = 1"
 else
 	echo "Please enter 'Y', 'y', 'N', or 'n'"
 fi
