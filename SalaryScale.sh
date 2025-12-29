@@ -9,6 +9,10 @@ read -p "Are you a manager (Y/N):" manager
 
 if [[ "$manager" = "Y" || "$manager" = "y" ]]; then
 	echo "IncsPerYear = 2"
+	for ((i=0; i<=($points * 2); i++))
+	do
+		echo "year $(($i /2))" $(( $startingSalary + ($i * $increment)))
+	done
 elif [[ "$manager" = "N" || "$manager" = "n" ]]; then
 	echo "IncsPerYear = 1"
 else
